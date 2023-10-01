@@ -1,0 +1,45 @@
+/*
+	Title of Code :- Make a Diamond Pattern Solution in C
+	Date of Creation :- 01-10-2023
+	Name of author :- Nikunj Patel
+*/
+
+#include <stdio.h>
+
+int main() {
+    int n, c, k, space = 1;
+	// ask for number of row
+    printf("Enter number of rows: ");
+    scanf("%d", &n);
+	// initial space
+    space = n - 1;
+	// half part of diamond
+    for (k = 1; k <= n; k++) {
+        for (c = 1; c <= space; c++)
+            printf(" ");
+
+        space--;
+
+        for (c = 1; c <= 2 * k - 1; c++)
+            printf("*");
+
+        printf("\n");
+    }
+
+    space = 1;
+	// other half part
+    for (k = 1; k <= n - 1; k++) {
+        for (c = 1; c <= space; c++)
+            printf(" ");
+
+        space++;
+
+        for (c = 1; c <= 2 * (n - k) - 1; c++)
+            printf("*");
+
+        printf("\n");
+    }
+
+    return 0;
+}
+// End of code 
